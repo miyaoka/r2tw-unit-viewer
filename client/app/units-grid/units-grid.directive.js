@@ -16,7 +16,6 @@ angular.module('r2twDbApp')
         var cellTemplateBool = '<div class="ui-grid-cell-contents"><span class="glyphicon glyphicon-star" ng-show="COL_FIELD"></span></div>';
 
         function refreshGrid(){
-          console.log('refresh');
           $scope.gridApi.grid.refresh();
           $scope.gridApi.core.handleWindowResize();
         }

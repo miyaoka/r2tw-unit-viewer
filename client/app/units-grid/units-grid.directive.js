@@ -180,7 +180,7 @@ angular.module('r2twDbApp')
             {
               headerCellClass: 'attack',
               graph: true,
-              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="60" items="[ {value: row.entity.land_unit.primary_melee_weapon.ap_damage, color:\'#aa8\'}, {value: row.entity.land_unit.primary_melee_weapon.damage, color:\'#ddc\'}, {value: row.entity.weapon_max_bonus, color:\'#eeb\'} ]">{{COL_FIELD}}<equip-icon item="row.entity.land_unit.primary_melee_weapon" type="weapon"></equip-icon></bg-graph></div>',
+              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="60" items="[ {value: row.entity.land_unit.primary_melee_weapon.ap_damage, color:\'#aa8\'}, {value: row.entity.land_unit.primary_melee_weapon.damage, color:\'#ddc\'}, {value: row.entity.weapon_max_bonus, color:\'#eeb\'} ]"><equip-icon item="row.entity.land_unit.primary_melee_weapon" type="weapon"></equip-icon>{{COL_FIELD}}</bg-graph></div>',
               field: 'weapon_damage',
               name: '武器ダメージ (Ap+Base +vs bonus)'
             },
@@ -206,7 +206,7 @@ angular.module('r2twDbApp')
             {
               headerCellClass: 'defence',
               graph: true,
-              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="100" items="[ {value: row.entity.land_unit.melee_defence, color:\'#aa8\'}, {value: row.entity.land_unit.shield.shield_defence_value, color:\'#ddc\'} ]">{{COL_FIELD}}<equip-icon item="row.entity.land_unit.shield" type="shield"></equip-icon></bg-graph></div>',
+              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="100" items="[ {value: row.entity.land_unit.melee_defence, color:\'#aa8\'}, {value: row.entity.land_unit.shield.shield_defence_value, color:\'#ddc\'} ]"><equip-icon item="row.entity.land_unit.shield" type="shield"></equip-icon>{{COL_FIELD}}</bg-graph></div>',
                field: 'defence',
               name: '白兵防御力 (スキル+盾)'
             },
@@ -214,7 +214,7 @@ angular.module('r2twDbApp')
             {
               headerCellClass: 'defence',
               graph: true,
-              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="150" items="[ {value: row.entity.land_unit.armour.armour_value, color:\'#aa8\'}, {value: row.entity.land_unit.shield.shield_armour_value, color:\'#ddc\'} ]">{{COL_FIELD}}<equip-icon item="row.entity.land_unit.armour" type="armour"></equip-icon></bg-graph></div>',
+              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="150" items="[ {value: row.entity.land_unit.armour.armour_value, color:\'#aa8\'}, {value: row.entity.land_unit.shield.shield_armour_value, color:\'#ddc\'} ]"><equip-icon item="row.entity.land_unit.armour" type="armour"></equip-icon>{{COL_FIELD}}</bg-graph></div>',
               field: 'armour',
               name: '装甲値 (鎧+盾)'
             },
@@ -241,7 +241,7 @@ angular.module('r2twDbApp')
             {
               headerCellClass: 'missile',
               graph: true,
-              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="70" items="[ {value: row.entity.projectile.ap_damage, color:\'#aa8\'}, {value: row.entity.projectile.damage, color:\'#ddc\'},  {value: row.entity.projectile_max_bonus, color:\'#eeb\'} ]">{{COL_FIELD}}<equip-icon item="row.entity.projectile" type="projectile"></equip-icon></bg-graph></div>',
+              cellTemplate: '<div class="ui-grid-cell-contents bg-graph-cell"><bg-graph min="0" max="70" items="[ {value: row.entity.projectile.ap_damage, color:\'#aa8\'}, {value: row.entity.projectile.damage, color:\'#ddc\'},  {value: row.entity.projectile_max_bonus, color:\'#eeb\'} ]"><equip-icon item="row.entity.projectile" type="projectile"></equip-icon>{{COL_FIELD}}</bg-graph></div>',
               field: 'missile_damage',
               name: '射撃ダメージ (Ap+Base +vs bonus)'
             },

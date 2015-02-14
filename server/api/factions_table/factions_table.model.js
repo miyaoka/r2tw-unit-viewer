@@ -1,0 +1,76 @@
+'use strict';
+
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
+
+var FactionsTableSchema = new Schema({
+  _id: String,
+  key: String,
+  index: Number,
+  subculture: String,
+  category: String,
+  screen_name: String,
+  screen_name_when_rebels: String,
+  screen_adjective: String,
+  name_group: Number,
+  skin: String,
+  is_rebel: Boolean,
+  icons_path_units: String,
+  flags_path: String,
+  republican_flag_path: String,
+  same_gov_type_revolution_flag_path: String,
+  primary_colour_r: Number,
+  primary_colour_g: Number,
+  primary_colour_b: Number,
+  alt_primary_colour_r: Number,
+  alt_primary_colour_g: Number,
+  alt_primary_colour_b: Number,
+  secondary_colour_r: Number,
+  secondary_colour_g: Number,
+  secondary_colour_b: Number,
+  alt_secondary_colour_r: Number,
+  alt_secondary_colour_g: Number,
+  alt_secondary_colour_b: Number,
+  rebel_colour_r: Number,
+  rebel_colour_g: Number,
+  rebel_colour_b: Number,
+  uniform_colour_r: Number,
+  alt_uniform_colour_g: Number,
+  alt_uniform_colour_b: Number,
+  military_group: String,
+  settler_rebellion_faction: String,
+  mp_available: Boolean,
+  mp_available_naval: Boolean,
+  movie_death_event: Number,
+  mp_use_republic_early: Boolean,
+  mp_use_republic_late: Boolean,
+  unit_regiment_name_group: Number,
+  ship_name_group: Number,
+  ui_skin: String,
+  attack_desc: String,
+  defend_desc: String,
+  mp_stats_name: String,
+  pre_battle_speech_parameter: String,
+  screen_name_when_shogun: String,
+  clan_summary_name: String,
+  clan_summary_name_when_shogun: String,
+  can_be_regionless: Boolean,
+  card_colour_r: Number,
+  card_colour_g: Number,
+  card_colour_b: Number,
+  diplomacy_culture: String,
+  senator_total: Number,
+  senator_text_n_out_of_n: String,
+  senator_text_lose_n: String,
+  senator_text_lose_1: String,
+  senator_text_gain_n: String,
+  senator_text_gain_1: String,
+  uses_legion_names: Boolean
+});
+
+FactionsTableSchema.path('key').set(function (val) {
+  this._id = val;
+  return val;
+});
+
+module.exports = mongoose.model('FactionsTable', FactionsTableSchema);

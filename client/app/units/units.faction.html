@@ -1,0 +1,8 @@
+<ul>
+  <li ng-repeat="f in data.factions">
+  {{'factions_screen_name_' + f | toI18n}}
+  </li>
+</ul>
+<div ng-hide="0 < data.factions.length">
+右メニューから勢力を選択してください
+</div>

@@ -1,0 +1,145 @@
+.units-grid {
+//  width: 100%;
+  height: 100%;
+  font-size: .9em;
+  box-sizing: content-box;
+
+  .ui-grid-row:nth-child(odd) .ui-grid-cell {
+    background-color: #fdfdfd;
+  }
+  .ui-grid-row:nth-child(even) .ui-grid-cell {
+    background-color: #f6f6f6;
+  }
+
+//  padding-top: 50px;
+//  box-sizing: border-box;
+  .attack{
+    background: linear-gradient(to top, #edd, #fee);
+  }
+  .defence{
+    background: linear-gradient(to top, #dde, #eef);
+  }
+  .missile{
+    background: linear-gradient(to top, #ded, #efe);
+  }
+
+
+  .equip-icon{
+    width: 22px;
+    height: 22px;
+    float: right;
+
+/*
+    filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+*/
+  }
+  .tooltip{
+    .tooltip-inner{
+      text-align: left;
+    //      word-break: break-all;
+      white-space: nowrap;
+      text-shadow:none;
+    }
+  }
+
+  .bg-graph-cell{
+    color:#000;
+    text-shadow:
+      rgba(255,255,255,.7) 1px 1px 0px,
+      rgba(255,255,255,.7) -1px 1px 0px,
+      rgba(255,255,255,.7) 1px -1px 0px,
+      rgba(255,255,255,.7) -1px -1px 0px;
+
+
+    width: 100%;
+    height: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+    .bg-graph{
+      padding-left: 2px;
+      padding-right: 2px;
+    //    height: 10px;
+    }
+
+  }
+
+
+  .ui-grid-header-cell {
+    font-size: .8em;
+    min-height: 80px !important;
+    .ui-grid-filter-container{
+      position: absolute;
+      bottom: 0px;
+      padding: 4px;
+    }
+    .ui-grid-cell-contents{
+      padding: 4px;
+      font-weight: normal;
+      white-space: normal;
+      word-break: break-word;
+      .ui-grid-icon-up-dir,
+      .ui-grid-icon-down-dir{
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .ui-grid-grid-footer {
+    background-color: #838383;
+    color: #fff;
+    padding: 4px 8px;
+    text-align: right;
+  }
+
+  .ui-grid-viewport{
+    .ui-grid-cell-contents{
+      text-overflow: clip;
+//      overflow: scroll;
+    }
+
+    .category_inf_melee,
+    {
+      background-color: #fcc;
+    }
+    .category_cavalry
+    {
+      background-color: #ffc;
+    }
+    .category_inf_ranged
+    {
+      background-color: #cec;
+    }
+
+    .class_inf_mel,
+    .class_cav_mel
+    {
+      background-color: #fcc;
+    }
+    .class_inf_spr
+    {
+      background-color: #cce;
+    }
+    .class_inf_pik,
+    .class_cav_shk
+    {
+      background-color: #ffc;
+    }
+    .class_inf_mis,
+    .class_cav_mis,
+    {
+      background-color: #cec;
+    }
+
+    .category_elephants,
+    .class_elph,
+    .class_spcl,
+    .class_chariot,
+    .class_com
+    {
+      background-color: #ccc;
+    }
+  }
+
+}

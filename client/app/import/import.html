@@ -1,0 +1,10 @@
+<div class="col-md-12">
+  <h3>inport xml</h3>
+  <div ng-file-reader on-readed="onReaded( event, file )" read-method="readMethod"  multiple></div>
+
+  <ul>
+    <li ng-repeat="f in files">
+      {{f.name}}: (ok:{{f.success}}, ng:{{f.error}}) / {{f.count}}
+    </li>
+  </ul>
+</div>

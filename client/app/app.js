@@ -5,7 +5,15 @@ angular.module('r2twDbApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngFileReader',
+  'cb.x2js',
+  'ui.grid',
+  'ui.grid.resizeColumns',
+  'ui.grid.pinning',
+//  'ui.grid.pagination',
+  'ui.grid.selection',
+  'btford.markdown'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider

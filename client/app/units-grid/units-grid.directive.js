@@ -252,7 +252,7 @@ angular.module('r2twDbApp')
               headerCellClass: 'missile',
               width: 40,
               field: 'land_unit.primary_missile_weapon.precursor',
-              name: '突撃時のみ射撃',
+              name: '突撃前射撃',
               cellTemplate: '<div class="ui-grid-cell-contents"><i class="fa fa-check" ng-show="COL_FIELD" style="color:#696"></i></div>'
             },
             {

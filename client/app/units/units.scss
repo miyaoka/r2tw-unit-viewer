@@ -1,0 +1,100 @@
+$selected-factions-height: 68px;
+$grid-column-padding: 15px;
+
+.units-header {
+  height: $selected-factions-height;
+
+  .graph-mul{
+    width: 60px;
+  }
+
+//  background-color: #0ff;
+//  border: 1px solid #00f;
+
+  ul{
+    padding: 0;
+    li{
+      display: inline-block;
+      padding: 0 .5em;
+      border-left: 2px #ccc solid;
+    }
+    li:first-child{
+      padding-left: 0;
+      border-left:none;
+    }
+  }
+
+}
+.units-body{
+  margin-top: $selected-factions-height;
+//  box-sizing: border-box;
+  position: absolute;
+  right: $grid-column-padding;
+  left: $grid-column-padding;
+  top: 0px;
+  bottom: 0px;
+
+  border: 1px solid #333;
+}
+
+
+
+
+$factions-selecter-header-height: 54px;
+
+.factions-selecter-header{
+  padding-top: 16px;
+  height: $factions-selecter-header-height;
+
+}
+
+.factions-selecter-body{
+  margin-top: $factions-selecter-header-height;
+//  box-sizing: border-box;
+  position: absolute;
+  right: $grid-column-padding;
+  left: $grid-column-padding;
+  top: 0px;
+  bottom: 0px;
+
+
+
+  overflow-y: scroll;
+
+  .campaign{
+    background-color: #428BCA;
+    color: #fff;
+    padding:4px;
+    //cursor: pointer;
+  }
+  ul {
+    margin: 0 0 0 .5em;
+    padding: 0;
+    list-style-type: none;
+  }
+  .playable {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .military-groups{
+    margin: 2px 0px;
+    li {
+      padding: 0px 4px;
+      border-right: 1px solid #aac;
+      display: inline-block;
+    }
+    li:first-child {
+//      border-right: 2px solid #000;
+//      background-color: #eee;
+//      border: 1px solid #eee;
+      color:#888;
+//      color:#fff;
+    }
+    li:last-child {
+      border-right: none;
+    }
+
+  }
+
+
+}

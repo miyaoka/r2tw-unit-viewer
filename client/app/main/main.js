@@ -4,7 +4,7 @@ angular.module('r2twDbApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {
-        url: '/',
+        url: '',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });

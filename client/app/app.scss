@@ -4,6 +4,15 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
 
+@font-face {
+  font-family: 'ui-grid';
+  src: url('/bower_components/angular-ui-grid/ui-grid.eot');
+  src: url('/bower_components/angular-ui-grid/ui-grid.eot#iefix') format('embedded-opentype'),
+    url('/bower_components/angular-ui-grid/ui-grid.woff') format('woff'),
+    url('/bower_components/angular-ui-grid/ui-grid.ttf?') format('truetype'),
+    url('/bower_components/angular-ui-grid/ui-grid.svg?#ui-grid') format('svg');
+}
+
 /**
  * App-wide Styles
  */
@@ -15,8 +24,32 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+html,
+body{
+  height: 100%;
+}
+body{
+  padding-top: 60px; //for navbar
+  padding-bottom: 15px;
+  box-sizing: border-box;
+}
+.full-height-wrapper {
+  height: 100%;// !important;
+  position: relative;
+}
+.bottom-padding{
+  padding-bottom: 60px;
+}
+
 // Component styles are injected through grunt
 // injector
+@import 'bg-graph/bg-graph.scss';
+@import 'changelog/changelog.scss';
+@import 'equip-icon/equip-icon.scss';
+@import 'import/import.scss';
 @import 'main/main.scss';
+@import 'readme/readme.scss';
+@import 'units-grid/units-grid.scss';
+@import 'units/units.scss';
 @import 'modal/modal.scss';
 // endinjector

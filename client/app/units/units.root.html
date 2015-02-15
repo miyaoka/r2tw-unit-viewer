@@ -1,0 +1,68 @@
+<div class="col-sm-9 full-height-wrapper">
+  <div class="units-header clearfix">
+    <form class="pull-right form-inline">
+      <button class="btn btn-default btn-sm" ng-click="gridControl.resetSort()">
+        <i class="fa fa-sort"></i>&nbsp;ソートリセット
+      </button>
+      <button class="btn btn-default btn-sm" ng-click="gridControl.restoreColWidth(); graphMul = 1">
+        <i class="fa fa-arrows-h"></i>&nbsp;表示幅リセット
+      </button>
+      <div class="form-group">
+        グラフ表示幅
+        <input
+          class="form-control input-sm graph-mul"
+          type="number"
+          ng-model="graphMul"
+          min=".5"
+          max="5"
+          step=".1"
+          ng-change="gridControl.setColWidth(graphMul)"
+        >倍
+      </div>
+    </form>
+
+    <h3>
+      <ui-view></ui-view>
+    </h3>
+  </div>
+  <div class="units-body">
+    <units-grid units="data.units" control="gridControl"></units-grid>
+  </div>
+
+</div>
+<div class="col-sm-3 full-height-wrapper">
+
+
+  <div class="factions-selecter-header">
+    <form class="pull-right form-inline">
+      <div class="form-group">
+        勢力名絞り込み:
+        <input
+          class="form-control"
+          ng-model="factionNameFilter"
+          ng-change="searchFactions()"
+          placeholder="faction name"
+        >
+      </div>
+    </form>
+  </div>
+
+  <div class="factions-selecter-body">
+    <div ng-repeat="c in campaigns">
+      <h4 class="campaign">
+        {{c.onscreen_name}}
+      </h4>
+      <ul >
+        <li ng-repeat="(mg, campaignFactions) in startPosFactions[c.campaign_name]">
+          <ul class="military-groups">
+            <li>{{mg}}</li>
+            <li ng-repeat="startPosFaction in campaignFactions | orderBy:'faction.screen_name'" ng-class="{playable: startPosFaction.playable}" class="faction">
+              <a ui-sref=".faction({faction:startPosFaction.faction.key})">{{startPosFaction.faction.i18n_name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

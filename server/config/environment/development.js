@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/r2twdb-dev'
   },
 
-  seedDB: true
+//  seedDB: true
 };

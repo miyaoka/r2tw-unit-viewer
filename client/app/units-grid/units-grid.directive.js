@@ -115,7 +115,7 @@ angular.module('r2twDbApp')
                 condition: uiGridConstants.filter.CONTAINS
               },
     //          cellTemplate: '<div class="ui-grid-cell-contents">{{row.entity.armour}}{{COL_FIELD CUSTOM_FILTERS}}</div>'
-              cellTemplate: '<div class="ui-grid-cell-contents"><span tooltip="{{row.entity.unit}}" tooltip-trigger="mouseenter" tooltip-placement="right">{{COL_FIELD}}</span></div>'
+              cellTemplate: '<div class="ui-grid-cell-contents"><a ng-href="http://www.honga.net/totalwar/rome2/unit.php?u={{row.entity.unit}}&f={{row.entity.faction}}" target="_blank">{{COL_FIELD}}</a></div>'
 
             },
 

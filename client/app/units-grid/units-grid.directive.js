@@ -11,7 +11,7 @@ angular.module('r2twDbApp')
       },
       link: function (scope, element, attrs) {
       },
-      controller:function($scope, uiGridConstants, I18n, UnitsData) {
+      controller:function($scope, uiGridConstants, I18n, UnitsData, $timeout) {
 
         var cellTemplateBool = '<div class="ui-grid-cell-contents"><span class="glyphicon glyphicon-star" ng-show="COL_FIELD"></span></div>';
 
@@ -19,6 +19,8 @@ angular.module('r2twDbApp')
           $scope.gridApi.grid.refresh();
           $scope.gridApi.core.handleWindowResize();
         }
+
+        $timeout(refreshGrid, 100);
 
         $scope.control = {
           resetSort : function(){
@@ -51,6 +53,7 @@ angular.module('r2twDbApp')
         }
 
         $scope.gridOptions = {
+          data: [],
           enableColumnResizing: true,
           enableColumnMenus: false,
           enableRowSelection: false,
@@ -365,7 +368,6 @@ angular.module('r2twDbApp')
           return item;
         });
 
-        $scope.gridOptions.data = [];
         $scope.$watch('units', function(data) {
           $scope.gridOptions.data = $scope.units;
           refreshGrid();

@@ -11,7 +11,7 @@ angular.module('r2twDbApp')
       },
       link: function (scope, element, attrs) {
       },
-      controller:function($scope, uiGridConstants, I18n, UnitsData) {
+      controller:function($scope, uiGridConstants, I18n, UnitsData, $timeout) {
 
         var cellTemplateBool = '<div class="ui-grid-cell-contents"><span class="glyphicon glyphicon-star" ng-show="COL_FIELD"></span></div>';
 
@@ -19,6 +19,8 @@ angular.module('r2twDbApp')
           $scope.gridApi.grid.refresh();
           $scope.gridApi.core.handleWindowResize();
         }
+
+        $timeout(refreshGrid, 100);
 
         $scope.control = {
           resetSort : function(){
@@ -51,6 +53,7 @@ angular.module('r2twDbApp')
         }
 
         $scope.gridOptions = {
+          data: [],
           enableColumnResizing: true,
           enableColumnMenus: false,
           enableRowSelection: false,
@@ -112,7 +115,7 @@ angular.module('r2twDbApp')
                 condition: uiGridConstants.filter.CONTAINS
               },
     //          cellTemplate: '<div class="ui-grid-cell-contents">{{row.entity.armour}}{{COL_FIELD CUSTOM_FILTERS}}</div>'
-              cellTemplate: '<div class="ui-grid-cell-contents"><span tooltip="{{row.entity.unit}}" tooltip-trigger="mouseenter" tooltip-placement="right">{{COL_FIELD}}</span></div>'
+              cellTemplate: '<div class="ui-grid-cell-contents"><a ng-href="http://www.honga.net/totalwar/rome2/unit.php?u={{row.entity.unit}}&f={{row.entity.faction}}" target="_blank">{{COL_FIELD}}</a></div>'
 
             },
 
@@ -249,7 +252,7 @@ angular.module('r2twDbApp')
               headerCellClass: 'missile',
               width: 40,
               field: 'land_unit.primary_missile_weapon.precursor',
-              name: '突撃時のみ射撃',
+              name: '突撃前射撃',
               cellTemplate: '<div class="ui-grid-cell-contents"><i class="fa fa-check" ng-show="COL_FIELD" style="color:#696"></i></div>'
             },
             {
@@ -365,7 +368,6 @@ angular.module('r2twDbApp')
           return item;
         });
 
-        $scope.gridOptions.data = [];
         $scope.$watch('units', function(data) {
           $scope.gridOptions.data = $scope.units;
           refreshGrid();
